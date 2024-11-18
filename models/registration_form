@@ -9,4 +9,8 @@ class RegistrationForm(models.Model):
     phone = fields.Char(string='Phone Number', required=True)
     address = fields.Text(string='Address')
     dob = fields.Date(string='Date of Birth')
-    gender = fields.Text(string='Gender')
+    gender = fields.Selection([
+        ('male', 'Male'),
+        ('female', 'Female'),
+        ('other', 'Other'),
+    ], string='Gender')
