@@ -12,5 +12,5 @@ class RegistrationForm(models.Model):
     gender = fields.Selection([
         ('male', 'Male'),
         ('female', 'Female'),
-        ('other', 'Other'),
+        ('other', 'OTHER'),
     ], string='Gender')
