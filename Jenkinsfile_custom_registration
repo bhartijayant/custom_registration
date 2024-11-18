@@ -12,7 +12,7 @@ pipeline {
 	stage('Syncing the files') {
 	   steps {
 		sh """
-                bash -c "rsync -av --exclude='.git' /opt/odoo17/odoo17/jenkins-agent/workspace/custom-registration/ /opt/odoo17/odoo17/custom-addons/custom-registration/"
+                bash -c "rsync -av --exclude='.git' /opt/odoo17/odoo17/jenkins-agent/workspace/custom-registration/ /opt/odoo17/odoo17/custom-addons/custom_registration/"
                 """
 	   }
 	}
