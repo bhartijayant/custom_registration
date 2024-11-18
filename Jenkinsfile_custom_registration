@@ -1,0 +1,44 @@
+pipeline {
+    agent {
+		label '87-agent'
+	}
+
+    environment {
+        VENV_PATH = "/opt/odoo17/odoo17-venv/bin/activate"
+        ODOO_SERVICE = "odoo17"
+    }
+
+    stages {
+	stage('Syncing the files') {
+	   steps {
+		sh """
+                bash -c "rsync -av --exclude='.git' /opt/odoo17/odoo17/jenkins-agent/workspace/custom-registration/ /opt/odoo17/odoo17/custom-addons/custom-registration/"
+                """
+	   }
+	}
+        stage('Activate Virtual Environment') {
+            steps {
+                sh """
+                bash -c "source ${VENV_PATH}"
+                """
+            }
+        }
+
+        stage('Restart Odoo Service') {
+            steps {
+                sh """
+                bash -c "systemctl restart ${ODOO_SERVICE}"
+                """
+            }
+        }
+    }
+
+    post {
+        success {
+            echo "Odoo 17 deployed successfully!"
+        }
+        failure {
+            echo "Deployment failed."
+        }
+    }
+}
