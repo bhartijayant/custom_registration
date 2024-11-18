@@ -1,20 +1,3 @@
-from odoo import models, fields
- 
-class RegistrationForm(models.Model):
-    _name = 'registration.form'
-    _description = 'Registration Form'
- 
-    name = fields.Char(string='Full Name', required=True)
-    email = fields.Char(string='Email', required=True)
-    phone = fields.Char(string='Phone Number', required=True)
-    address = fields.Text(string='Address')
-    dob = fields.Date(string='Date of Birth')
-(odoo17-venv) root@TTDLVM018:/opt/odoo17/odoo17/custom-addons/custom_registration# cat security/ir.model.access.csv 
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_registration_form,access.registration.form,model_registration_form,,1,1,1,1
-(odoo17-venv) root@TTDLVM018:/opt/odoo17/odoo17/custom-addons/custom_registration# ls views/
-registration_form_views.xml
-(odoo17-venv) root@TTDLVM018:/opt/odoo17/odoo17/custom-addons/custom_registration# cat views/registration_form_views.xml 
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 <record id="view_registration_form_tree" model="ir.ui.view">
