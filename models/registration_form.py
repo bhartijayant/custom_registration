@@ -12,6 +12,10 @@ class RegistrationForm(models.Model):
     gender = fields.Selection([
         ('male', 'Male'),
         ('female', 'Female'),
-        ('other', 'OTHER'),
+        ('other', 'Other'),
     ], string='Gender')
-    occupation = fields.Text(string='Occupation')
+    occupation = fields.Selection([
+        ('salaried', 'Salaried'),
+        ('self_employed', 'Self Employed'),
+        ('unemployed', 'Unemployed'),
+    ], string='Occupation')
