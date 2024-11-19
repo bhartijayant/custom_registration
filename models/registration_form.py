@@ -14,3 +14,4 @@ class RegistrationForm(models.Model):
         ('female', 'Female'),
         ('other', 'Other'),
     ], string='Gender')
+    occupation = fields.Text(string='Occupation')  # New Occupation field
