@@ -9,7 +9,6 @@
                 <field name="email"/>
                 <field name="phone"/>
                 <field name="occupation"/>
-                <!-- <field name="dob"/> -->
                 <field name="gender"/> 
             </tree>
         </field>
@@ -26,8 +25,9 @@
                         <field name="email"/>
                         <field name="phone"/>
                         <field name="address"/>
-                        <field name="occupation"/>
-                        <!-- <field name="dob"/> -->
+                        <field name="occupation" 
+                               options="{'no_create': True}" 
+                               t-att-style="'background-color: lightgrey;'"/>
                         <field name="gender"/> 
                     </group>
                 </sheet>
