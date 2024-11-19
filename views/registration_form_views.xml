@@ -25,9 +25,7 @@
                         <field name="email"/>
                         <field name="phone"/>
                         <field name="address"/>
-                        <field name="occupation" 
-                               options="{'no_create': True}" 
-                               t-att-style="'background-color: lightgrey;'"/>
+                        <field name="occupation" style="background-color: lightgrey;" options="{'no_create': True}"/>
                         <field name="gender"/> 
                     </group>
                 </sheet>
