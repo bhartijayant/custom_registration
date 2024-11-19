@@ -8,7 +8,6 @@
                 <field name="name"/>
                 <field name="email"/>
                 <field name="phone"/>
-                <field name="occupation"/>
                 <field name="gender"/> 
             </tree>
         </field>
@@ -25,7 +24,6 @@
                         <field name="email"/>
                         <field name="phone"/>
                         <field name="address"/>
-                        <field name="occupation" style="background-color: lightgrey;" options="{'no_create': True}"/>
                         <field name="gender"/> 
                     </group>
                 </sheet>
