@@ -9,7 +9,7 @@
                 <field name="email"/>
                 <field name="phone"/>
                 <field name="gender"/> 
-                <field name="occupation"/>  <!-- New Occupation field -->
+                <field name="occupation"/>  <!-- Updated Occupation field -->
             </tree>
         </field>
     </record>
@@ -26,7 +26,7 @@
                         <field name="phone"/>
                         <field name="address"/>
                         <field name="gender"/> 
-                        <field name="occupation"/>  <!-- New Occupation field -->
+                        <field name="occupation"/>  <!-- Updated Occupation field -->
                     </group>
                 </sheet>
             </form>
