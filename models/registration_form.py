@@ -14,4 +14,8 @@ class RegistrationForm(models.Model):
         ('female', 'Female'),
         ('other', 'Other'),
     ], string='Gender')
-    occupation = fields.Text(string='Occupation')  # New Occupation field
+    occupation = fields.Selection([
+        ('salaried', 'Salaried'),
+        ('self_employed', 'Self-Employed'),
+        ('unemployed', 'Unemployed'),
+    ], string='Occupation')  # Updated Occupation field
