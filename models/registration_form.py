@@ -1,7 +1,7 @@
 from odoo import models, fields
 
-class EducationBenefit(models.Model):
-    _name = 'education.benefit'
+class RegistrationForm(models.Model):
+    _name = 'registration.form'  # Retaining the original model name
     _description = 'Children Education Benefit Program'
 
     child_name = fields.Char(string="Child's Name", required=True)
