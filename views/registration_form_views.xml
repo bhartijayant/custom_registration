@@ -1,45 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <record id="view_registration_form_tree" model="ir.ui.view">
-        <field name="name">registration.form.tree</field>
-        <field name="model">registration.form</field>
+    <record id="view_education_benefit_tree" model="ir.ui.view">
+        <field name="name">education.benefit.tree</field>
+        <field name="model">education.benefit</field>
         <field name="arch" type="xml">
-            <tree>
-                <field name="name"/>
-                <field name="email"/>
-                <field name="phone"/>
-                <field name="gender"/> 
-                <field name="occupation"/>  <!-- Updated Occupation field -->
+            <tree decoration-info="is_approved">
+                <field name="child_name"/>
+                <field name="parent_name"/>
+                <field name="school_name"/>
+                <field name="grade"/>
+                <field name="benefit_amount" widget="monetary"/>
+                <field name="status" widget="statusbar"/>
             </tree>
         </field>
     </record>
-     
-    <record id="view_registration_form_form" model="ir.ui.view">
-        <field name="name">registration.form.form</field>
-        <field name="model">registration.form</field>
+
+    <record id="view_education_benefit_form" model="ir.ui.view">
+        <field name="name">education.benefit.form</field>
+        <field name="model">education.benefit</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
-                    <group>
-                        <field name="name"/>
-                        <field name="email"/>
-                        <field name="phone"/>
-                        <field name="address"/>
-                        <field name="gender"/> 
-                        <field name="occupation"/>  <!-- Updated Occupation field -->
-                    </group>
+                    <div style="background-color: #f3faff; padding: 20px; border-radius: 10px;">
+                        <h2 style="color: #007bff;">Children Education Benefit Program</h2>
+                        <group>
+                            <field name="child_name" placeholder="Enter Child's Full Name"/>
+                            <field name="parent_name" placeholder="Enter Parent/Guardian's Name"/>
+                            <field name="school_name" placeholder="Enter School Name"/>
+                            <field name="grade" placeholder="Enter Grade/Class"/>
+                            <field name="date_of_application" widget="date"/>
+                            <field name="benefit_amount" placeholder="Enter Benefit Amount"/>
+                            <field name="status" widget="statusbar"/>
+                            <field name="is_approved" invisible="1"/>
+                            <field name="comments" widget="html"/>
+                        </group>
+                    </div>
                 </sheet>
             </form>
         </field>
     </record>
-     
-    <record id="action_registration_form" model="ir.actions.act_window">
-        <field name="name">Registration Forms</field>
-        <field name="res_model">registration.form</field>
+
+    <record id="action_education_benefit" model="ir.actions.act_window">
+        <field name="name">Education Benefits</field>
+        <field name="res_model">education.benefit</field>
         <field name="view_mode">tree,form</field>
     </record>
-     
-    <menuitem id="menu_registration_form_root" name="Registration" sequence="10"/>
-    <menuitem id="menu_registration_form" name="Forms" parent="menu_registration_form_root"
-              action="action_registration_form" sequence="10"/>
+
+    <menuitem id="menu_education_benefit_root" name="Education Benefit Program" sequence="10"/>
+    <menuitem id="menu_education_benefit" name="Applications" parent="menu_education_benefit_root"
+              action="action_education_benefit" sequence="10"/>
 </odoo>
