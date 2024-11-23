@@ -11,6 +11,7 @@
                 <field name="grade"/>
                 <field name="benefit_amount" widget="monetary"/>
                 <field name="status" widget="statusbar"/>
+                <field name="is_approved"/> <!-- Added field -->
             </tree>
         </field>
     </record>
@@ -31,7 +32,7 @@
                             <field name="date_of_application" widget="date"/>
                             <field name="benefit_amount" placeholder="Enter Benefit Amount"/>
                             <field name="status" widget="statusbar"/>
-                            <field name="is_approved" invisible="1"/>
+                            <field name="is_approved" invisible="1"/> <!-- Present but invisible -->
                             <field name="comments" widget="html"/>
                         </group>
                     </div>
