@@ -9,7 +9,7 @@
                 <field name="parent_name"/>
                 <field name="school_name"/>
                 <field name="grade"/>
-                <field name="benefit_amount" widget="monetary"/>
+                <field name="family_income" widget="monetary"/>
                 <field name="status" widget="statusbar"/>
                 <field name="is_approved"/>
             </tree>
@@ -22,18 +22,33 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
-                    <div style="background-color: #f3faff; padding: 20px; border-radius: 10px;">
-                        <h2 style="color: #007bff;">Children Education Benefit Program</h2>
+                    <div style="background-color: #fdf7e3; padding: 20px; border-radius: 10px;">
+                        <h2 style="color: #ff4500;">Children Education Benefit Program</h2>
                         <group>
                             <field name="child_name" placeholder="Enter Child's Full Name"/>
                             <field name="parent_name" placeholder="Enter Parent/Guardian's Name"/>
                             <field name="school_name" placeholder="Enter School Name"/>
-                            <field name="grade" placeholder="Enter Grade/Class"/>
+                            <field name="grade"/>
                             <field name="date_of_application" widget="date"/>
                             <field name="benefit_amount" placeholder="Enter Benefit Amount"/>
                             <field name="status" widget="statusbar"/>
                             <field name="is_approved" invisible="1"/>
-                            <field name="comments" widget="html"/>
+                        </group>
+                        <h3 style="color: #228b22;">Parent/Guardian Information</h3>
+                        <group>
+                            <field name="parent_occupation"/>
+                            <field name="family_income" widget="monetary"/>
+                            <field name="num_children"/>
+                            <field name="is_single_parent"/>
+                            <field name="residence_type"/>
+                        </group>
+                        <h3 style="color: #1e90ff;">Additional Financial Information</h3>
+                        <group>
+                            <field name="education_expenses"/>
+                            <field name="income_proof" widget="binary"/>
+                            <field name="loan_status"/>
+                            <field name="loan_details"/>
+                            <field name="additional_notes"/>
                         </group>
                     </div>
                 </sheet>
