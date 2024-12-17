@@ -11,6 +11,7 @@
                 <field name="grade"/>
                 <field name="family_income" widget="monetary"/>
                 <field name="status" widget="statusbar"/>
+                <field name="is_approved" invisible="1"/>
             </tree>
         </field>
     </record>
