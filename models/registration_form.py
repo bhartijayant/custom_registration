@@ -1,7 +1,7 @@
 from odoo import models, fields
 
-class GirlChildWelfare(models.Model):
-    _name = 'girl.child.welfare'
+class RegistrationForm(models.Model):
+    _name = 'registration.form'  # Revert to match ir.model.access.csv
     _description = 'Girl Child Education and Welfare Program'
 
     # Basic Information
