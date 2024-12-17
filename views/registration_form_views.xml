@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <record id="view_registration_form_tree" model="ir.ui.view">
-        <field name="name">registration.form.tree</field>
-        <field name="model">registration.form</field>
+    <record id="view_girl_child_welfare_tree" model="ir.ui.view">
+        <field name="name">girl.child.welfare.tree</field>
+        <field name="model">girl.child.welfare</field>
         <field name="arch" type="xml">
             <tree decoration-info="is_approved">
                 <field name="child_name"/>
@@ -11,43 +11,41 @@
                 <field name="grade"/>
                 <field name="family_income" widget="monetary"/>
                 <field name="status" widget="statusbar"/>
-                <field name="is_approved"/>
             </tree>
         </field>
     </record>
 
-    <record id="view_registration_form_form" model="ir.ui.view">
-        <field name="name">registration.form.form</field>
-        <field name="model">registration.form</field>
+    <record id="view_girl_child_welfare_form" model="ir.ui.view">
+        <field name="name">girl.child.welfare.form</field>
+        <field name="model">girl.child.welfare</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
-                    <div style="background-color: #fdf7e3; padding: 20px; border-radius: 10px;">
-                        <h2 style="color: #ff4500;">Children Education Benefit Program</h2>
+                    <div style="background-color: #fff0f5; padding: 20px; border-radius: 15px; border: 1px solid #dda0dd;">
+                        <h2 style="color: #800080; text-align: center;">
+                            Girl Child Education and Welfare Program
+                        </h2>
                         <group>
-                            <field name="child_name" placeholder="Enter Child's Full Name"/>
+                            <field name="child_name" placeholder="Enter Girl's Full Name"/>
                             <field name="parent_name" placeholder="Enter Parent/Guardian's Name"/>
                             <field name="school_name" placeholder="Enter School Name"/>
                             <field name="grade"/>
                             <field name="date_of_application" widget="date"/>
-                            <field name="benefit_amount" placeholder="Enter Benefit Amount"/>
+                            <field name="family_income" widget="monetary"/>
                             <field name="status" widget="statusbar"/>
-                            <field name="is_approved" invisible="1"/>
                         </group>
-                        <h3 style="color: #228b22;">Parent/Guardian Information</h3>
+
+                        <h3 style="color: #ba55d3; margin-top: 15px;">Parent/Guardian Details</h3>
                         <group>
                             <field name="parent_occupation"/>
-                            <field name="family_income" widget="monetary"/>
-                            <field name="num_children"/>
                             <field name="is_single_parent"/>
                             <field name="residence_type"/>
                         </group>
-                        <h3 style="color: #1e90ff;">Additional Financial Information</h3>
+
+                        <h3 style="color: #9932cc;">Financial and Welfare Information</h3>
                         <group>
                             <field name="education_expenses"/>
-                            <field name="income_proof" widget="binary"/>
-                            <field name="loan_status"/>
-                            <field name="loan_details"/>
+                            <field name="scholarship_details"/>
                             <field name="additional_notes"/>
                         </group>
                     </div>
@@ -56,13 +54,13 @@
         </field>
     </record>
 
-    <record id="action_registration_form" model="ir.actions.act_window">
-        <field name="name">Registration Forms</field>
-        <field name="res_model">registration.form</field>
+    <record id="action_girl_child_welfare" model="ir.actions.act_window">
+        <field name="name">Girl Child Welfare Applications</field>
+        <field name="res_model">girl.child.welfare</field>
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="menu_registration_form_root" name="Education Benefit Program" sequence="10"/>
-    <menuitem id="menu_registration_form" name="Applications" parent="menu_registration_form_root"
-              action="action_registration_form" sequence="10"/>
+    <menuitem id="menu_girl_child_welfare_root" name="Girl Child Welfare" sequence="10"/>
+    <menuitem id="menu_girl_child_welfare" name="Applications" parent="menu_girl_child_welfare_root"
+              action="action_girl_child_welfare" sequence="10"/>
 </odoo>
