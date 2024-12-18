@@ -1,8 +1,11 @@
 from odoo import models, fields
 
-class RegistrationForm(models.Model):
-    _name = 'registration.form'
-    _description = 'Simple Registration Form'
+class FamilyWelfare(models.Model):
+    _name = 'family.welfare'
+    _description = 'Family Welfare Program'
 
-    name = fields.Char(string="Name", required=True)
+    family_name = fields.Char(string="Family Name", required=True)
     address = fields.Char(string="Address", required=True)
+    num_members = fields.Integer(string="Number of Members", required=True)
+    monthly_income = fields.Float(string="Monthly Income", required=True)
+    additional_notes = fields.Text(string="Additional Notes")
