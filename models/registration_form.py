@@ -1,7 +1,7 @@
 from odoo import models, fields
 
-class FamilyWelfare(models.Model):
-    _name = 'family.welfare'
+class RegistrationForm(models.Model):
+    _name = 'registration.form'  # Keep this to match ir.model.access.csv
     _description = 'Family Welfare Program'
 
     family_name = fields.Char(string="Family Name", required=True)
