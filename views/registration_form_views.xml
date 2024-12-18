@@ -1,27 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <!-- Tree View -->
-    <record id="view_registration_form_tree" model="ir.ui.view">
-        <field name="name">registration.form.tree</field>
-        <field name="model">registration.form</field>
+    <record id="view_family_welfare_tree" model="ir.ui.view">
+        <field name="name">family.welfare.tree</field>
+        <field name="model">family.welfare</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name"/>
+                <field name="family_name"/>
                 <field name="address"/>
+                <field name="num_members"/>
+                <field name="monthly_income"/>
             </tree>
         </field>
     </record>
 
     <!-- Form View -->
-    <record id="view_registration_form_form" model="ir.ui.view">
-        <field name="name">registration.form.form</field>
-        <field name="model">registration.form</field>
+    <record id="view_family_welfare_form" model="ir.ui.view">
+        <field name="name">family.welfare.form</field>
+        <field name="model">family.welfare</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
                     <group>
-                        <field name="name"/>
+                        <field name="family_name"/>
                         <field name="address"/>
+                    </group>
+                    <group>
+                        <field name="num_members"/>
+                        <field name="monthly_income"/>
+                    </group>
+                    <group>
+                        <field name="additional_notes"/>
                     </group>
                 </sheet>
             </form>
@@ -29,14 +38,14 @@
     </record>
 
     <!-- Action -->
-    <record id="action_registration_form" model="ir.actions.act_window">
-        <field name="name">Registration Forms</field>
-        <field name="res_model">registration.form</field>
+    <record id="action_family_welfare" model="ir.actions.act_window">
+        <field name="name">Family Welfare Records</field>
+        <field name="res_model">family.welfare</field>
         <field name="view_mode">tree,form</field>
     </record>
 
     <!-- Menu Items -->
-    <menuitem id="menu_registration_form_root" name="Simple Registration" sequence="10"/>
-    <menuitem id="menu_registration_form" name="Forms" parent="menu_registration_form_root"
-              action="action_registration_form" sequence="10"/>
+    <menuitem id="menu_family_welfare_root" name="Family Welfare Program" sequence="10"/>
+    <menuitem id="menu_family_welfare" name="Records" parent="menu_family_welfare_root"
+              action="action_family_welfare" sequence="10"/>
 </odoo>
